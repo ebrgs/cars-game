@@ -20,7 +20,7 @@ header > h1 {
     gap: 5px;
 }
 
-.caixa_fruta {
+.caixa_carro {
     cursor: pointer;
     cursor: -webkit-grabbing;
 }
@@ -122,7 +122,7 @@ main {
     display: none;
 }
 
-.caixa_fruta {
+.caixa_carro {
     position: absolute;
     width: 150px;
     height: 150px;
@@ -131,13 +131,13 @@ main {
     justify-content: center;
 }
 
-.box_cestas {
+.box_estacionamento {
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
 
-.cesta {
+.estac {
     position: relative;
     width: 150px;
     height: 150px;
@@ -148,36 +148,36 @@ main {
     background-image: url(../assets/uvava.png);
     background-size: cover;
 }
-.cesta-uva {
-    background-image: url(../assets/cesta-uva.png);
+.estac-terrestre {
+    background-image: url(../assets/estac-terrestre.png);
     background-size: cover;
 }
 .maca {
     background-image: url(../assets/mamaca.png);
     background-size: cover;
 }
-.cesta-maca {
-    background-image: url(../assets/cesta-maca.png);
+.estac-aquatico {
+    background-image: url(../assets/estac-aquatico.png);
     background-size: cover;
 }
 .banana {
     background-image: url(../assets/bananana.png);
     background-size: cover;
 }
-.cesta-banana {
-    background-image: url(../assets/cesta-banana.png);
+.estac-voador {
+    background-image: url(../assets/estac-voador.png);
     background-size: cover;
 }
 .melancia {
     background-image: url(../assets/melancia.png);
     background-size: cover;
 }
-.cesta-melancia {
-    background-image: url(../assets/cesta-melancia.png);
+.estac-melancia {
+    background-image: url(../assets/estac-melancia.png);
     background-size: cover;
 }
 
-.cesta > .caixa_fruta {
+.estac > .caixa_carro {
     position: static;
     width: 60px;
     height: 80px;

@@ -40,7 +40,7 @@ function reiniciarJogo() {
 }
 
 function aleatorizarFrutas() {
-    const caixasFrutas = document.querySelectorAll(".caixa_fruta")
+    const caixasFrutas = document.querySelectorAll(".caixa_carro")
     caixasFrutas.forEach(caixa => {
         const topFruit = Math.floor(Math.random() * 200)
         const leftFruit = Math.floor(Math.random() * 750)
@@ -50,17 +50,17 @@ function aleatorizarFrutas() {
     })
 }
 function removerFrutas() {
-    const cestasFrutas = document.querySelectorAll(".cesta")
+    const cestasFrutas = document.querySelectorAll(".estac")
     const parteJogo = document.querySelector(".parte_jogo")
-    cestasFrutas.forEach(cesta => {
-        cesta.childNodes.forEach(item => {
+    cestasFrutas.forEach(estac => {
+        estac.childNodes.forEach(item => {
             parteJogo.append(item)
         })
     })
 }
 
 function movimentarFrutas() {
-    const cestasFrutas = document.querySelectorAll(".cesta")
+    const cestasFrutas = document.querySelectorAll(".estac")
     let frutaPuxada
 
     document.addEventListener("dragstart", (event) => {
@@ -73,16 +73,16 @@ function movimentarFrutas() {
         verificarSeConcluiu()
     })
 
-    cestasFrutas.forEach((cesta) => {
-        cesta.addEventListener("dragover", (event) => {
+    cestasFrutas.forEach((estac) => {
+        estac.addEventListener("dragover", (event) => {
             if(frutaPuxada.classList[1] == event.target.classList[1]){
                 const dragging = document.querySelector(".dragging")
-                const applyAfter = pegarNovaPosicao(cesta, event.clientY)
+                const applyAfter = pegarNovaPosicao(estac, event.clientY)
     
                 if(applyAfter) {
                     applyAfter.insertAdjacentElement("afterend", dragging)
                 } else {
-                    cesta.prepend(dragging)
+                    estac.prepend(dragging)
                 }
                 
             }
@@ -90,8 +90,8 @@ function movimentarFrutas() {
     })
 }
 
-function pegarNovaPosicao(cesta, posY) {
-    const frutas = cesta.querySelectorAll(".caixa_fruta:not(.dragging)")
+function pegarNovaPosicao(estac, posY) {
+    const frutas = estac.querySelectorAll(".caixa_carro:not(.dragging)")
     let result
 
     for (let cesta_referencia of frutas) {
@@ -105,13 +105,13 @@ function pegarNovaPosicao(cesta, posY) {
 }
 
 function verificarSeConcluiu() {
-    const cestasFrutas = document.querySelectorAll(".cesta")
+    const cestasFrutas = document.querySelectorAll(".estac")
     const paginaJogo = document.querySelector(".pagina_jogo")
     const paginaFinal = document.querySelector(".pagina_final")
     let verificador = 0
 
-    cestasFrutas.forEach((cesta) => {
-        verificador += cesta.childNodes.length
+    cestasFrutas.forEach((estac) => {
+        verificador += estac.childNodes.length
     })
     if (verificador == 12) {
         paginaJogo.classList.add("pagina_escondida")
